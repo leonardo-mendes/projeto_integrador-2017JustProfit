@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Beite - Free Responsive Portfolio Bootstrap3 Template | PCMShaper</title>
+	
+	<!-- Needed CSS & Font Files -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/prettyPhoto.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/presets/preset1.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/notify.css">
+	
+	<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">-->
+    <style>
+        .textoinvalido{
+            display: none;
+        }
+    </style>
+</head>
+<body onload="listaProdutos(2)">
+	
+	<!-- Header Start -->
+	<header id="header">
+	
+		<!-- Menu & Logo -->
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand sr-only" href="index.html">
+						<h1><img class="img-responsive" src="assets/images/logo.png" alt="logo"></h1>
+					</a>                    
+				</div>
+				<div class="header-logo hidden-phone text-center">
+					<h1>
+						<a class="navbar-brand" href="index.html">
+							<img class="img-responsive" src="assets/images/logo.png" alt="logo">
+						</a> 
+					</h1>
+				</div>
+				<div class="header-menu collapse navbar-collapse">
+					<ul class="nav navbar-nav">                 
+						<li class="scroll active"><a href="vendedorhome.html">Página Inicial</a></li>
+						<li class="scroll"><a href="vendedorfornecedor.html">Fornecedores / Pedidos</a></li>                     
+						<li class="scroll"><a href="vendedorcliente.html">Clientes</a></li>
+						<li class="scroll"><a href="contact.html">Ranking</a></li>      
+						<li class="scroll"><a href="contact.html">Contato</a></li>  
+						<li class="scroll"><a href="contact.html">Logout</a></li>       
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+	</header>
+	<!-- Header End -->
+
+	<section id="portfolio">
+		<div class="container">	
+	<!-- Novo Pedido -->			
+			<div class="row">
+				<div class="panel panel-default">
+				  <div class="panel-heading"><h4>Produtos</h4></div>
+				  
+					<div class="panel-body">
+
+						<form>
+							<input type="text" class="form-control" placeholder="Cliente" disabled><br>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="form-group">
+									<label for="nomeProd">Produto</label>
+									<input type="text" class="form-control" id="nomeProd" placeholder="Produto" disabled>
+								</div>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<label for="nomeForn">Fornecedor</label>
+									<input type="text" class="form-control" id="nomeForn" placeholder="Fornecedor" disabled>
+								</div>
+							</div>
+							
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<label for="preco">Preço</label>
+									<input id="preco" type="text" class="form-control" placeholder="Preço">
+								</div>
+							</div>	
+							
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<label for="desc">Desconto</label>
+									<input type="text" class="form-control" id="desc" placeholder="Desconto Máximo">
+								</div>
+							</div>	
+							
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">							
+								<div class="form-group">
+									<label for="qtd">Quantidade</label>
+									<input type="text" class="form-control" id="qtd" placeholder="Quantidade">
+								</div>
+							</div>
+							
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">							
+								<div class="form-group">
+									<label for="vlrTotal">Valor Total do Produto</label>
+									<input type="text" class="form-control" id="vlrTotal" placeholder="Valor Total" disabled>
+								</div>
+							</div>	
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<br>
+							    <div class="row textoinvalido">
+									<div class="col-lg-3 col-md-3"></div>	
+									<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+                                        <p>Valor inválido, por favor informe novamente.</p>
+									</div>
+									<div class="col-lg-3 col-md-3"></div>		
+								</div><br>
+								<div class="row">
+									<div class="col-lg-3 col-md-3"></div>	
+									<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+										<input id="btnInserirProduto" type="button" class="btn btn-primary" value="Inserir Produto">
+										<input type="button" class="btn btn-success" value="Finalizar Pedido">
+										<input type="button" class="btn btn-danger" value="Cancelar Pedido">
+									</div>
+								</div>
+								<div class="row">
+								    <div class="col-lg-3 col-md-3 naoPode hidden text-center">
+								        <h3>Este item já esta no seu pedido</h3>
+								    </div>
+								</div>
+								<br>
+							</div>	
+							
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<input type="text" class="form-control" placeholder="Pesquisar Produto"><br>
+								<table id="tabelaProdutos" class="table table-hover">								
+                                    <thead>
+                                        <tr class="active">
+                                            <td id="idProd">Id</td>
+                                            <td id="nomeProd1">Produto</td>
+                                            <td id="nomeForn1">Fornecedor</td>
+                                            <td id="preco1">Preço</td>							
+                                            <td id="desc1">Desconto Máximo %</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="listaProdutos">									
+                                        <tr >
+                                            <td >n1</td>
+                                            <td >Sabão CraCra</td>
+                                            <td >Loja Teste</td>
+                                            <td >10.00</td>							
+                                            <td >10</td>
+                                        </tr>
+                                        <tr >
+                                            <td >n2</td>
+                                            <td >Sabão CraCra</td>
+                                            <td >Loja Teste</td>
+                                            <td >20.50</td>							
+                                            <td >30</td>
+                                        </tr>
+                                        <tr >
+                                            <td >n3</td>
+                                            <td >Sabão CraCra</td>
+                                            <td >Loja Teste</td>
+                                            <td >30.16</td>							
+                                            <td >20</td>
+                                        </tr>
+                                    </tbody>
+								</table>
+							</div>
+						</form>
+					</div>
+				</div>			
+			</div>
+	<!-- Fim Novo Pedido -->	
+	
+	<!-- Meu Pedido -->			
+			<div class="row">
+				<div class="panel panel-default">
+				  <div class="panel-heading"><h4>Meu Pedido</h4></div>
+				  
+				  <div class="panel-body">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<table id="tabelaPedidos" class="table table-hover">
+							    <thead>
+                                    <tr class="active">
+                                        <td id="idProd1">Id</td>
+                                        <td id="nomeProd1">Produto</td>
+                                        <td id="nomeForn1">Preço</td>
+                                        <td id="preco1">Desconto</td>							
+                                        <td id="desc1">Preço Desconto</td>
+                                        <td id="qtd1">Qtd</td>
+                                        <td id="">Valor Somado</td>
+                                        <td id="" class="text-center">Ação</td>
+                                    </tr>
+							    </thead>
+							    <tbody>
+                                    <tr></tr>
+							    </tbody>								
+							</table>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<label for="vlrPedido">Valor do Pedido</label>
+							<input type="text" class="form-control" id="vlrPedido" placeholder="Valor Total" disabled>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<label for="vlrSaldo">Saldo do Vendedor</label>
+							<input type="text" class="form-control" id="vlrSaldo" placeholder="Saldo do Vendedor" disabled>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<label for="vlrDesconto">Desconto Total do Pedido</label>
+							<input type="text" class="form-control" id="vlrDesconto" placeholder="Desconto Total do Pedido" disabled>
+						</div>
+					</div>
+
+				  </div>
+				</div>			
+			</div>
+		</div>
+	</section>
+	<!-- Meu Pedido Fim -->
+	
+	
+	
+	<!-- Footer Start -->
+	<footer id="footer">
+		<div class="footer-top">
+			<div class="container text-center">
+				<div class="footer-social">
+					<ul>
+						<li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> 
+						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<p>© 2017 JustProfit.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer End -->
+	
+	<!-- Needed jQuery Files -->
+    <script type="text/javascript" src="assets/js/events.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.priceformat.min.js"></script>
+    <script type="text/javascript" src="assets/js/notify.min.js"></script>
+    <script type="text/javascript" src="assets/js/scriptCarregaDados.js"></script>
+    <script>
+        $(document).ready(function(){
+        	chama();
+            // $('#tabelaPedidos tbody tr td:nth-child(5)').priceFormat({prefix: 'R$ ', centsSeparator: ',', thousandsSeparator: '.'});            
+        });
+        
+        function descontoNoti(){
+            var desc = $('tr.select').children('td:nth-child(5)').text();
+            var a = parseInt($('#desc').val());
+
+            if(a>desc){
+               var options = {
+                    'title': 'Ops !',
+                    'style': 'error',
+                    'message': 'Porcentagem maxima de desconto excedida!',
+                    'icon': 'warning',
+                };
+                var n = new notify(options);
+                n.show();
+                return true;
+            }
+            else{
+                return false;
+            }
+            
+        }
+            
+        $('#tabelaPedidos').on('click', 'button.btn-danger', function(){
+            $(this).closest ('tr').remove ();
+            
+            $(function() {
+                var vlrPedido = 0;
+                $('#tabelaPedidos tbody tr td:nth-child(7)').each( function() {
+                    vlrPedido += parseFloat($(this).text());
+                });
+                $('#vlrPedido').val( "R$ " + vlrPedido );
+            });
+            
+            $(function() {
+                var vlrDesconto = 0;
+                $('#tabelaPedidos tbody tr td:nth-child(4)').each( function() {
+                    vlrDesconto += parseFloat($(this).text());
+                });
+                $('#vlrDesconto').val( "R$ " + vlrPedido );
+            });
+        });
+
+        $('#btnInserirProduto').click(function(){
+            var nomeProd = $('#nomeProd').val();
+            var preco = parseFloat($('#preco').val());
+            var vlrtable = parseFloat($('tr.select').children('td:nth-child(5)').text());
+            var id = $('tr.select').children('td:nth-child(1)').text();
+            var desc = $('#desc').val();
+            var vlrTotal = $('#vlrTotal').val();
+            var qtd = parseInt($('#qtd').val());
+            var totaldesc = (parseFloat(preco)-parseFloat($('tr.select').children('td:nth-child(4)').text()))*(-1);
+            var Tdesc = vlrTotal * totaldesc;
+            
+            var isContains = $('#tabelaPedidos tbody tr td').text().indexOf(id) > -1;    
+            
+            descMaximo = descontoNoti();
+
+            if (nomeProd == ""){
+                var options = {
+                    'title': 'Ops !',
+                    'style': 'error',
+                    'message': 'Selecione um item!',
+                    'icon': 'warning',
+                };
+                var s = new notify(options);
+                s.show();
+            }
+            else if (isContains == true){
+                var options = {
+                    'title': 'Ops !',
+                    'style': 'error',
+                    'message': 'Este item ja está no seu pedido!',
+                    'icon': 'warning',
+                };
+                var n = new notify(options);
+                n.show();
+            }
+            else if(isContains == false){
+                if(descMaximo = true){
+                    $('#tabelaPedidos tbody tr:last').after('<tr><td>' + id + '</td><td>' + nomeProd + '</td><td>' + preco + '</td><td>' + desc + ' %</td><td>' + Tdesc.toFixed(2) + '</td><td>' + qtd + '</td><td>' + vlrTotal + '</td><td class="text-center"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></td></tr>');
+                }
+            }
+            
+            $(function() {
+                var vlrPedido = 0;
+                $('#tabelaPedidos tbody tr td:nth-child(7)').each( function() {
+                    vlrPedido += parseFloat($(this).text());
+                });
+                $('#vlrPedido').val( "R$ " + vlrPedido );
+            });
+            
+            $(function() {
+                var vlrDesconto = 0;
+                $('#tabelaPedidos tbody tr td:nth-child(5)').each( function() {
+                    vlrDesconto += parseFloat($(this).text());
+                });
+                $('#vlrDesconto').val( "R$ " + vlrDesconto );
+            });
+            
+        });
+        
+        $('table#tabelaProdutos tbody tr').click(function chama(){
+        	alert("teste");
+            $('table#tabelaProdutos tbody tr').removeClass('select');
+            $('table#tabelaProdutos tbody tr').css('background','#fff');
+            $('table#tabelaProdutos tbody tr').css('color','#000');
+            $(this).addClass('select');
+            $('.textoinvalido').css('display','none');
+            $('tr.select').css('background','#7B68EE');
+            $('tr.select').css('color','#fff');
+            /*alert("p");
+            $('#preco').val("1");
+            var p = $('tr.select').text();
+            alert(p);*/
+            var preco = $('tr.select').children('td:nth-child(4)').text();
+            $('#preco').val(preco);
+            var nomeProd = $('tr.select').children('td:nth-child(2)').text();
+            $('#nomeProd').val(nomeProd);
+            var nomeForn = $('tr.select').children('td:nth-child(3)').text();
+            $('#nomeForn').val(nomeForn);
+            $('#vlrTotal').val(preco);
+            $('#desc').val("0");
+            $('#qtd').val("1");
+        });
+        $("#qtd").keyup(function(){
+            //var desc = $("#desc").text();
+            //  alert(desc);
+            var preco = parseFloat($('#preco').val());
+            //var desco = preco * (parseFloat(desc)/100);
+            var qtd = parseInt($('#qtd').val());
+            //$('#vlrTotal').val(a.toString);
+            $('#vlrTotal').val(Math.round((preco*qtd) * 100) / 100);
+
+            var valor = $('#vlrTotal').val();
+            if (isNaN(valor)) {
+                $('#vlrTotal').val("R$ 0,00");
+            }
+        });
+
+        $("#desc").blur(function(){
+            var desc = $('tr.select').children('td:nth-child(5)').text();
+            var a = parseInt($('#desc').val());
+            var qtd = parseInt($('#qtd').val());
+
+            if(a>desc){
+               var options = {
+                    'title': 'Ops !',
+                    'style': 'error',
+                    'message': 'Porcentagem maxima de desconto excedida!',
+                    'icon': 'warning',
+                };
+                var n = new notify(options);
+                n.show();
+            }
+            else{
+                var preco = parseFloat($('tr.select').children('td:nth-child(4)').text());
+                var precoTotal = preco - (preco*(a/100));
+                $('#preco').val(precoTotal);
+                $('#vlrTotal').val(precoTotal*qtd);
+            }
+
+            var valor = $('#vlrTotal').val();
+            if (isNaN(valor)) {
+                $('#vlrTotal').val("R$ 0,00");
+            }
+        });
+
+        $("#preco").blur(function(){
+            var desc = parseInt($('tr.select').children('td:nth-child(5)').text());
+            var preco = parseFloat($('tr.select').children('td:nth-child(4)').text());
+            var minimo = preco - (preco*(desc/100));
+            var qtd = parseInt($('#qtd').val());
+            var precoAtual= parseFloat($('#preco').val());
+            var porc = parseFloat(((((precoAtual/preco)*100)-100)*(-1)));
+
+            if(precoAtual<minimo){
+                $('#preco').val(0);
+                $('#qtd').val(0);
+                $('#desc').val(0);
+                $('#vlrTotal').val(0);
+                $('#nomeProd').val("");
+                $('#nomeForn').val("");
+                $('.textoinvalido').css('display','block');
+               }
+            else{
+                $('.textoinvalido').css('display','none');
+                var T = precoAtual*qtd;
+                $('#vlrTotal').val(T.toFixed(2));
+                $('#desc').val(porc); 
+            }
+
+            /*var valor = $('#vlrTotal').val();
+            if (isNaN(valor)) {
+                $('#vlrTotal').val("0,00");
+            }*/
+        });
+
+        /*
+        $('#element').priceFormat({
+            suffix: '€',
+            prefix: '',
+            clearPrefix: true,
+            clearSuffix: true,
+            thousandsSeparator: '',
+            clearOnEmpty: true,
+            limit: 2,
+            centsLimit: 1,
+            allowNegative: true
+        });
+        $("#button").click(function() {
+            alert($('#element').unmask());
+        });
+        */              
+    </script>
+    
+</body>
+</html>
