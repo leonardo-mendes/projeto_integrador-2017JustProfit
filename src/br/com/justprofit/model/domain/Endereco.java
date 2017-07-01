@@ -8,7 +8,7 @@ public class Endereco {
     private Cidade cidade;
     private Bairro bairro;
 
-    public Endereco(Integer codend, String logradouro, Integer numero, String cep2, Cidade cidade, Bairro bairro) {
+	public Endereco(Integer codend, String logradouro, Integer numero, String cep2, Cidade cidade, Bairro bairro) {
         this.codend = codend;
         this.logradouro = logradouro;
         this.numero = numero;
@@ -62,7 +62,34 @@ public class Endereco {
 		return bairro;
 	}
 	
-	
+	  public void setLogradouro(String logradouro) {
+			this.logradouro = logradouro;
+		}
+
+
+
+		public void setNumero(Integer numero) {
+			this.numero = numero;
+		}
+
+
+
+		public void setCep(String cep) {
+			this.cep = cep;
+		}
+
+
+
+		public void setCidade(Cidade cidade) {
+			this.cidade = cidade;
+		}
+
+
+
+		public void setBairro(Bairro bairro) {
+			this.bairro = bairro;
+		}
+		
 	public String toString(){
     String info="";
         info+="\nCodigo: "+this.codend;

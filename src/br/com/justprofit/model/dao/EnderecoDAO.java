@@ -80,4 +80,31 @@ public class EnderecoDAO {
         return codlogr;
     }
 
+    public Endereco BuscaEnderecoPorCEP(String Cep) throws SQLException{
+    	Connection conexao = FabricaDeConexoes.getConnection();
+        PreparedStatement stmt = conexao.prepareStatement(Constants.SCRIPT_BUSCA_ENDERECO_BY_CEP);
+        stmt.setString(1,Cep);
+        ResultSet resultadoLogr = stmt.executeQuery();
+        Integer codBairro=null;
+        String logradouro = "",cep="";
+        
+        while(resultadoLogr.next()){
+        	logradouro = resultadoLogr.getString("NOMELOGR");
+        	codBairro = resultadoLogr.getInt("CODBAI");
+        	cep = resultadoLogr.getString("CEP");
+        }
+        
+        BairroDAO bairroDao = new BairroDAO();
+        CidadeDAO cidDao = new CidadeDAO();
+        Bairro bairro = bairroDao.BuscaBairroPorID(codBairro);
+        Cidade cidade = cidDao.BuscaCidadePorID(bairro.getCidade().getCodCid());
+        
+        Endereco endereco = new Endereco(null, logradouro, null,cep, cidade, bairro);
+        
+        stmt.close();
+        conexao.close();
+        return endereco;
+    }
+    
+    
 }

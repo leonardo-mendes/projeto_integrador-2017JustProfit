@@ -15,8 +15,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
         <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="assets/js/events.js" type="text/javascript"></script>
+        <script src="assets/js/scriptCarregaDados.js" type="text/javascript"></script>
 </head>
-<body>
+<body onload="recebeDadosCep()">
 	
 	<!-- Header Start -->
 	<div id="header">
@@ -45,13 +46,17 @@
 							<label for="telefone">Telefone</label>
 							<input type="text" class="form-control" id="telefone" placeholder="Telefone"><br>
 							<label for="regiao">Região</label>
-							<select class="form-control" id="regiao">
-								<option>Região 1</option>
-								<option>Região 2</option>
+							<select class="form-control" id="regiaoT">
+								<option>Selecione</option>
+								<option>CENTRO OESTE</option>
+								<option>NORDESTE</option>
+								<option>NORTE</option>
+								<option>SUDESTE</option>
+								<option>SUL</option>
 							</select><br>
-							<label for="cidade">Cidade</label>
+							<label for="cidade" >Cidade</label>
 							<input type="text" class="form-control" id="cidade" placeholder="Cidade"><br>
-							<label for="cep">CEP</label>
+							<label for="cep" >CEP</label>
 							<input type="text" class="form-control" id="cep" placeholder="CEP"><br>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -62,11 +67,32 @@
 							<label for="email">Email</label>
 							<input type="text" class="form-control" id="email" placeholder="Email"><br>
 							<label for="estado">Estado</label>
-							<select class="form-control" id="estado">
-								<option>Estado 1</option>
-								<option>Estado 2</option>
+							<select class="form-control" id="estadoT">
+								<option>Selecione</option>
+								<option>ACRE</option>
+								<option>ALAGOAS</option>
+								<option>AMAPA</option>
+								<option>AMAZONAS</option>
+								<option>DISTRITO FEDERAL</option>
+								<option>ESPIRITO SANTO</option>
+								<option>GOIAS</option>
+								<option>MARANHAO</option>
+								<option>MATO GROSSO</option>
+								<option>MATO GROSSO DO SUL</option>
+								<option>MINAS GERAIS</option>
+								<option>PARA</option>
+								<option>PARAIBA</option>
+								<option>PARANA</option>
+								<option>PIAUI</option>
+								<option>RIO DE JANEIRO</option>
+								<option>RIO GRANDE DO NORTE</option>
+								<option>RIO GRANDE DO SUL</option>
+								<option>RONDONIA</option>
+								<option>RORAIMA</option>
+								<option>SANTA CATARINA</option>
+								<option>SAO PAULO</option>
 							</select><br>
-							<label for="bairro">Bairro</label>
+							<label for="bairro" >Bairro</label>
 							<input type="text" class="form-control" id="bairro" placeholder="Bairro"><br>
 							<label for="logradouro">Logradouro</label>
 							<input type="text" class="form-control" id="logradouro" placeholder="Logradouro"><br>
@@ -85,7 +111,7 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-3"></div>	
 						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
-							<input type="button" class="btn btn-primary" value="Cadastrar">
+							<input type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" value="Cadastrar">
 							<input type="button" class="btn btn-danger" value="Cancelar">
 						</div>
 						<div class="col-lg-3 col-md-3"></div>		
@@ -98,6 +124,73 @@
 
 	</footer>
 	<!-- Footer End -->
+	
+		<!-- Modal Novo Cadastro -->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	  	<br><br>
+			<form>
+				<div class="row">
+					<div class="title text-center col-sm-12">
+						<h4>Por favor, leia com atenção a nossa Responsabilidade Social.</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-2 col-md-2"></div>	
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+						<br>
+						<p style="font-family:Calibri; font-size:16px; line-height:30px;"> 				
+							Atualmente, o mercado dá o nome de Responsabilidade Social a atitudes que
+
+							o Grupo tem como valores corporativos, formados e sedimentados ao longo 
+							 
+							dos anos. <br>No Brasil, a empresa sempre desenvolveu iniciativas sociais, que 
+							 
+							marcaram sua presença no país.<br><br>
+							 
+							 
+							Nossa gestão de <b>fornecedores</b> - estabelecimento de normas de boas relações.
+							 
+							As empresas parceiras da Justprofit tem como diferencial a responsabilidade 
+							 
+							social, cada qual com o seu projeto.<br> Este é um pré-requisito para
+							 
+							realização destas parcerias. Com essa iniciativa, a Justprofit promove,
+							
+							indiretamente, o comprometimento das empresas parceiras com a sociedade,
+							 
+							demonstrado através de projetos socioambientais para a comunidade mesmo 
+							 
+							que ainda em desenvolvimento.<br><br>
+							 
+							 
+							<p style="font-family:Calibri; font-size:18px; line-height:30px;"><b>Faça parte de nosso grupo.</b></p> <br>
+							
+							Compartilhe suas ideias e experiências na
+							 
+							construção de uma sociedade melhor começando pelo nosso Relacionamento de
+							 
+							Trabalho!
+
+						</p>
+					</div>
+					<div class="col-lg-2 col-md-2"></div>		
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-lg-3 col-md-3"></div>	
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+						<input type="button" class="btn btn-primary" value="Eu li e concordo com as Responsabilidades Sociais da JustProfit"  data-dismiss="modal">
+					</div>
+					<div class="col-lg-3 col-md-3"></div>		
+				</div>					
+				<br><br>
+			</form><br><br>
+	    </div>
+	  </div>
+	</div>
+	<!-- Fim Modal Novo Cadastro -->
 	
 	<!-- Needed jQuery Files -->
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>

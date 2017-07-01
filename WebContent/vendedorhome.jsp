@@ -130,7 +130,7 @@
 						</div>
 
 						<form style="text-align: center; margin-top: 10px;" method="get">
-							<input type="button" class="btn btn-primary" value="Atualizar Dados" >
+							<input type="button" class="btn btn-primary" value="Atualizar Dados">
 						</form>
 					  </div>
 				</div>

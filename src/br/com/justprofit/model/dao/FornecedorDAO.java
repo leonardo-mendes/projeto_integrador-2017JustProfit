@@ -89,6 +89,7 @@ public class FornecedorDAO implements CrudDAO{
         conexao.close();
 	}
 
+	
 	public void exclui(Usuario usu) throws SQLException {
 		Fornecedor fornecedor = (Fornecedor) usu;
         Connection conexao = FabricaDeConexoes.getConnection();
@@ -281,6 +282,110 @@ public class FornecedorDAO implements CrudDAO{
         stmt.close();
         conexao.close();
 		return total;
+	}
+    
+    public LinkedList<String> buscaNomesRegioes() throws SQLException {
+  		Connection conexao = FabricaDeConexoes.getConnection();
+          PreparedStatement stmt = conexao.prepareStatement(Constants.SCRIPT_SELECT_TODAS_REGIOES);
+          ResultSet resultado = stmt.executeQuery();
+
+          LinkedList<String> cods = new LinkedList<String>();
+          
+          while(resultado.next()){
+        	  cods.add(resultado.getString("NOMEREG"));
+          }
+          
+          stmt.execute();
+          stmt.close();
+          conexao.close();
+  		return cods;
+  	}
+    
+    
+    public Double geraValorTotalRegiao(int codReg, int codForn) throws SQLException {
+		Connection conexao = FabricaDeConexoes.getConnection();
+        PreparedStatement stmt = conexao.prepareStatement(Constants.SCRIPT_SELECT_VALOR_FATURAMENTO_MENSAL_REGIAO);
+        stmt.setInt(1,codReg);
+        stmt.setInt(2,codForn);
+        ResultSet resultado = stmt.executeQuery();
+
+        Double total = 0.0;
+        
+        while(resultado.next()){
+        	total = resultado.getDouble("VLRTOTAL");
+        }
+        
+        stmt.execute();
+        stmt.close();
+        conexao.close();
+		return total;
+	}
+
+    public LinkedList<String> geraRanking (int codForn, int codReg) throws SQLException {
+		Connection conexao = FabricaDeConexoes.getConnection();
+        PreparedStatement stmt = conexao.prepareStatement(Constants.SCRIPT_SELECT_RANKING_VENDEDORES_POR_REGAO);
+        stmt.setInt(1,codReg);
+        stmt.setInt(2,codForn);
+        ResultSet resultado = stmt.executeQuery();
+        LinkedList<String> cods = new LinkedList<String>();
+        
+        while(resultado.next()){
+        	String linha = "";
+        	linha+= resultado.getString("VLRTOTAL");
+        	linha+= ",";	
+        	
+        	cods.add(linha);
+        }
+        
+        stmt.execute();
+        stmt.close();
+        conexao.close();
+		return cods;
+	}
+    
+    public LinkedList<String> geraHistoricoPosProduto(int codReg, int codUsu) throws SQLException {
+		Connection conexao = FabricaDeConexoes.getConnection();
+        PreparedStatement stmt = conexao.prepareStatement(Constants.SCRIPT_SELECT_HISTORICO_PRODOTO_MAIS_VENDIDO);
+        stmt.setInt(1,codReg);
+        stmt.setInt(2,codUsu);
+        ResultSet resultado = stmt.executeQuery();
+
+        LinkedList<String> cods = new LinkedList<String>();
+        
+        while(resultado.next()){
+        	String linha = resultado.getString("PRODUTO");
+        	cods.add(linha);
+        }
+        
+        stmt.execute();
+        stmt.close();
+        conexao.close();
+		return cods;
+	}
+
+    public LinkedList<String> geraDadosGraficoFornecedor(int codReg, int codForn) throws SQLException {
+		Connection conexao = FabricaDeConexoes.getConnection();
+        PreparedStatement stmt = conexao.prepareStatement(Constants.SCRIPT_SELECT_RANKING_GRAFICO_FORNECEDOR);
+        stmt.setInt(1,codReg);
+        stmt.setInt(2,codForn);
+        ResultSet resultado = stmt.executeQuery();
+
+        LinkedList<String> cods = new LinkedList<String>();
+        
+        while(resultado.next()){
+        	String linha = resultado.getString("6_MESES");
+        	 linha += "/"+ resultado.getString("5_MESES");
+        	 linha += "/"+resultado.getString("4_MESES");
+        	 linha += "/"+resultado.getString("3_MESES");
+        	 linha += "/"+resultado.getString("2_MESES");
+        	 linha += "/"+resultado.getString("1_MESES");
+        	 cods.add(linha);
+        }
+        
+        stmt.execute();
+        stmt.close();
+        conexao.close();
+		return cods;
 	}
     
 }

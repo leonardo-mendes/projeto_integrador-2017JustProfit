@@ -51,7 +51,7 @@
 					  <div class="tab-content">
 							<div role="tabpanel" class="tab-pane active" id="informacoes"><br>
 								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<form id="formedit">
+									<form id="formedit1">
 									  <div class="form-group">
 									    <label for="razaosocial">Razão Social</label>
 									    <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social" disabled="disabled">
@@ -71,7 +71,7 @@
 									</form>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<form id="formedit">
+									<form id="formedit2">
 									  <div class="form-group">
 									    <label for="codusu">Código de Usuário</label>
 									    <input type="text" class="form-control" id="codusu" placeholder="Código de Usuário" disabled="disabled">
@@ -93,7 +93,7 @@
 							</div>
 							<div role="tabpanel" class="tab-pane" id="endereco"><br>
 								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<form id="formedit">
+									<form id="formedit3">
 									  <div class="form-group">
 									    <label for="regiao">Região</label>
 									    <input type="text" class="form-control" id="regiao" placeholder="Região" disabled="disabled">
@@ -109,7 +109,7 @@
 									</form>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<form id="formedit">
+									<form id="formedit4">
 									  <div class="form-group">
 									    <label for="estado">Estado</label>
 									    <input type="text" class="form-control" id="estado" placeholder="Estado" disabled="disabled">
@@ -127,9 +127,8 @@
 							</div>
 						
 						</div>
-
-						<form style="text-align: center; margin-top: 10px;" method="get">
-							<input type="button" class="btn btn-primary" value="Atualizar Dados" >
+						<form style="text-align: center; margin-top: 10px;" method="get" id="acoes">
+							<input type="button" class="btn btn-primary" value="Atualizar Dados" onclick="habilitaEdicao()">
 						</form>
 					  </div>
 				</div>
