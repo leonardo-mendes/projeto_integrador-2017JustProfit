@@ -10,39 +10,13 @@ import java.util.LinkedList;
 import br.com.justprofit.model.dao.util.Constants;
 import br.com.justprofit.model.dao.util.FabricaDeConexoes;
 import br.com.justprofit.model.domain.Cliente;
-import br.com.justprofit.model.domain.Fornecedor;
 import br.com.justprofit.model.domain.Pedido;
-import br.com.justprofit.model.domain.Produto;
 import br.com.justprofit.model.domain.Vendedor;
 
 public class PedidoDAO {
     
 	public PedidoDAO() {}
 	
-	public void salvaPedido(Pedido pedido) throws SQLException{
-		/* PreparedStatement stmt = conexao.prepareStatement();
-        stmt.setInt(1,);
-        
-        
-        
-        stmt.execute();  
-        stmt.close();
-        conexao.close();*/
-	}
-	
-	
-	
-	public void excluiPedido(Pedido pedido) throws SQLException{
-		/* PreparedStatement stmt = conexao.prepareStatement();
-        stmt.setInt(1,);
-        
-        
-        
-        stmt.execute();  
-        stmt.close();
-        conexao.close();*/
-		
-	}
 	
 	public static Pedido buscaPedidoPorID(Integer id) throws SQLException{
         Connection conexao = FabricaDeConexoes.getConnection();
@@ -90,4 +64,24 @@ public class PedidoDAO {
          return reslist;
      }
 	
+	 public void salvaPedido(Pedido pedido) throws SQLException{
+			/* PreparedStatement stmt = conexao.prepareStatement();
+	        stmt.setInt(1,);
+	        
+	        stmt.execute();  
+	        stmt.close();
+	        conexao.close();*/
+		}
+		
+		
+		
+		public void excluiPedido(Pedido pedido) throws SQLException{
+			/* PreparedStatement stmt = conexao.prepareStatement();
+	        stmt.setInt(1,);
+	        
+	        stmt.execute();  
+	        stmt.close();
+	        conexao.close();*/
+			
+		}
 }

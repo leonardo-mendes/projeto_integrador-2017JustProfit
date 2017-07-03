@@ -8,52 +8,14 @@ import java.util.LinkedList;
 
 import br.com.justprofit.model.dao.util.Constants;
 import br.com.justprofit.model.dao.util.FabricaDeConexoes;
-import br.com.justprofit.model.domain.Endereco;
 import br.com.justprofit.model.domain.Fornecedor;
 import br.com.justprofit.model.domain.Pedido;
 import br.com.justprofit.model.domain.Produto;
-import br.com.justprofit.model.domain.Vendedor;
 
 public class ProdutoDAO {
 
      public ProdutoDAO() {}
         
-     public void adicionaProdutoPedido(Produto prod, Pedido pedido) throws SQLException{
-    	 Connection conexao = FabricaDeConexoes.getConnection();
-        /* PreparedStatement stmt = conexao.prepareStatement();
-         stmt.setInt(1,);
-         
-         //Select
-        ResultSet resultado = stmt.executeQuery();
-        Integer codVend = null;
-        while(resultado.next()){
-        	codVend = resultado.getInt("CODVEND");
-        }
-        
-         
-         stmt.execute();  
-         stmt.close();
-         conexao.close();*/
- 		
- 	}
-     
-     
-     public void removeProdutoPedido(Produto prod, Pedido pedido) throws SQLException{
-    	 /* PreparedStatement stmt = conexao.prepareStatement();
-         stmt.setInt(1,);
-         
-         //Select
-        ResultSet resultado = stmt.executeQuery();
-        Integer codVend = null;
-        while(resultado.next()){
-        	codVend = resultado.getInt("CODVEND");
-        }
-         
-         stmt.execute();  
-         stmt.close();
-         conexao.close();*/
-
-  	}
      
      public static Produto buscaProdutoPorID(Integer id) throws SQLException{
          Connection conexao = FabricaDeConexoes.getConnection();
@@ -98,5 +60,42 @@ public class ProdutoDAO {
          conexao.close();
          return reslist;
      }
+     
+     public void adicionaProdutoPedido(Produto prod, Pedido pedido) throws SQLException{
+    	 Connection conexao = FabricaDeConexoes.getConnection();
+        /* PreparedStatement stmt = conexao.prepareStatement();
+         stmt.setInt(1,);
+         
+         //Select
+        ResultSet resultado = stmt.executeQuery();
+        Integer codVend = null;
+        while(resultado.next()){
+        	codVend = resultado.getInt("CODVEND");
+        }
+        
+         
+         stmt.execute();  
+         stmt.close();
+         conexao.close();*/
+ 		
+ 	}
+     
+     
+     public void removeProdutoPedido(Produto prod, Pedido pedido) throws SQLException{
+    	 /* PreparedStatement stmt = conexao.prepareStatement();
+         stmt.setInt(1,);
+         
+         //Select
+        ResultSet resultado = stmt.executeQuery();
+        Integer codVend = null;
+        while(resultado.next()){
+        	codVend = resultado.getInt("CODVEND");
+        }
+         
+         stmt.execute();  
+         stmt.close();
+         conexao.close();*/
+
+  	}
      
 }

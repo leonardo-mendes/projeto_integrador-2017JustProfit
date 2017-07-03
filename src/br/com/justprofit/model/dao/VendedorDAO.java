@@ -80,7 +80,7 @@ public class VendedorDAO implements CrudDAO{
         vendedor.setCodVend(codVend);
         
         //Insere dados do contrato do vendedor
-        FornecedorDAO fornDAO = new FornecedorDAO();
+       // FornecedorDAO fornDAO = new FornecedorDAO();
         //fornDAO.associaVendedorInserindoContrato(vendedor.getFornecedor().getCodusu(), vendedor.getCodVend(),vendedor.getSaldo());
         Integer codUsuForn = usuDAO.buscaCodUsu(vendedor.getFornecedor());
         vendedor.getFornecedor().setCodusu(codUsuForn);
