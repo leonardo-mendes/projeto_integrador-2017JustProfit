@@ -65,19 +65,18 @@
                 <div id="divDefault">
                     <img class="imgLogo" src="assets/img/justprofit.png" alt=""/>
                     <div id="conteinerTextosDefault">
-                        <p id="textoDefault">O mercado que está a sua procura</p>
+                        <p id="textoDefault">Leve seus produtos à várias regiões do país.<br>O mercado que está a sua procura.</p>
                     </div>
                 </div>
                 
                 <div id="divRedesSociais">
-                    <img class="imgLogo" src="assets/img/redes_sociais.png" alt="Redes Sociais" usemap="#image-map"/>
-                    <map name="image-map">
-                        <area target="_blank" alt="Facebook" title="Facebook" href="#" coords="80,76,64" shape="circle">
-                        <area target="_blank" alt="Twitter" title="Twitter" href="#" coords="222,76,64" shape="circle">
-                        <area target="_blank" alt="Email" title="Email" href="#" coords="358,76,64" shape="circle">
-                        <area target="_blank" alt="Instagram" title="Instagram" href="#" coords="495,76,64" shape="circle">
-                        <area target="_blank" alt="Youtube" title="Youtube" href="#" coords="634,76,64" shape="circle">
-                    </map>
+					<ul>
+						<li><a href="#"><img src="assets/img/facebook.png" alt="Facebook" title="Facebook"></a></li>
+						<li><a href="#"><img src="assets/img/twitter.png" alt="Twitter" title="Twitter"></a></li> 
+						<li><a href="#"><img src="assets/img/email.png" alt="E-mail" title="E-mail"></a></li>
+						<li><a href="#"><img src="assets/img/instagram.png" alt="Instagram" title="Instagram"></a></li>
+						<li><a href="#"><img src="assets/img/youtube.png" alt="Youtube" title="Youtube"></a></li>
+					</ul>
                 </div>
                 
                 <div class="border-right1"></div>
@@ -127,13 +126,13 @@
                             <div class="containerRadios">
                                 <ul>
                                     <li>
-                                      <input type="radio" id="radioBtEmpresa" name="segmento" value="pj" checked>
+                                      <input type="radio" id="radioBtEmpresa" name="segmento" value="pj" checked onclick="teste(1)">
                                       <label for="radioBtEmpresa">Empresa</label>
                                       <div class="check"></div>
                                     </li>
 
                                     <li>
-                                      <input type="radio" id="radioBtVendedor" name="segmento" value="pf">
+                                      <input type="radio" id="radioBtVendedor" name="segmento" value="pf" onclick="teste(2)">
                                       <label for="radioBtVendedor">Vendedor</label>
                                       <div class="check"></div>
                                     </li>
@@ -204,7 +203,8 @@
 
                     <div id="logar">
                     
-                        <form id="formlogar" name="formLogar1" action="login" method="get">
+                        <!-- <form id="formlogar" name="formLogar1" action="login" method="get"> -->
+                        <form id="formlogar" name="formLogar1" action="" method="get">
                         
                             <div class="field-wrap">
                                 <label>
@@ -222,8 +222,13 @@
 
                             <p class="forgot"><a href="#">Esqueceu a senha?</a></p>
 
-                            <button class="button button-block" onClick="document.forms['formLogar1'].submit();">ACESSAR</button>
-
+                            <button class="button button-block" style="padding: 0;">
+                            	<a id="linkPaginaInicial" href="fornecedorhome.jsp" style="width: 100%;height: 60px;line-height: 60px;text-decoration: none;display: block;color: white;">
+                            		ACESSAR
+                            	</a>
+							</button>
+							<!-- <button class="button button-block" onClick="document.forms['formLogar1'].submit();">ACESSAR</button> -->
+							
                         </form>
 
                     </div>
@@ -237,6 +242,18 @@
     </div>
 </div>
         
+        
+<script type="text/javascript">
+	
+	function teste(valor){
+		if(valor == 1){
+			$("#linkPaginaInicial").attr("href", "fornecedorhome.jsp");
+		}else if(valor == 2){
+			$("#linkPaginaInicial").attr("href", "vendedorhome.jsp");
+		}
+	}
+	
+</script>
         
 <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

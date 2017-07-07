@@ -21,7 +21,7 @@
         <script src="assets/js/scriptCarregaDados.js" type="text/javascript"></script>
 </head>
 <body onload="carrregaDadosVendedorHome(2)">
-	
+	<div class="saberNomeHTML" style="display: none;">vendedorhome</div>
 	<!-- Header Start -->
 	<div id="header">
 	
@@ -145,8 +145,8 @@
 	</footer>
 	<!-- Footer End -->
 	
-	<!-- Needed jQuery Files -->
-	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+ 	<!-- Needed jQuery Files -->
+ 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.prettyPhoto.js" type="text/javascript"></script>
 	<script src="assets/js/main.js" type="text/javascript"></script>

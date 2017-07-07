@@ -17,12 +17,12 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/presets/preset1.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
         <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="assets/js/eventsforn.js" type="text/javascript"></script>
+		<script src="assets/js/eventsforn.js" type="text/javascript"></script>
         <script src="assets/js/scriptCarregaDados.js" type="text/javascript"></script>
         
 </head>
 <body onload="carrregaDadosFornecedorHome(3)">
-	
+	<div class="saberNomeHTML" style="display: none;">fornecedorhome</div>
 	<!-- Header Start -->
 	<div id="header">
 	
